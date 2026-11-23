@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Menu de navigation -->
   <header>
     <h1>Sacha Dumont</h1>
     <nav>
