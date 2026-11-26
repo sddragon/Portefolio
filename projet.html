@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projet Personnel - Sacha Dumont</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Sacha Dumont</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="index.html#parcours">Parcours</a>
+      <a href="index.html#realisations">Réalisations</a>
+      <a href="index.html#veille">Veille technologique</a>
+      <a href="projet.html">Projet</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="titre">
+    <h2>Présentation du projet « Personnel »</h2>
+    <p>Application de gestion du personnel des ligues sportives - novembre 2026</p>
+    <p>Code du projet : <a href="https://github.com/sddragon/personnel">github.com/sddragon/personnel</a></p>
+  </section>
+
+  <!-- Qu'est-ce que c'est ? -->
+  <section id="description">
+    <h2>Qu'est-ce que le projet ?</h2>
+    <p>« Personnel » est une application Java en ligne de commande qui permet de gérer les ligues d'une fédération et leurs employés. Nous sommes partis d'une base fournie , puis nous l'avons complétée en équipe de deux, de septembre à novembre 2026.</p>
+
+    <p>L'application repose sur trois idées :</p>
+    <ul>
+      <li>un compte <strong>root</strong>, unique, protégé par un mot de passe demandé au lancement, qui n'appartient à aucune ligue et ne peut pas être supprimé ;</li>
+      <li>des <strong>ligues</strong>, chacune ayant un nom et un administrateur ;</li>
+      <li>des <strong>employés</strong>, rattachés à une ligue, avec nom, prénom, mail, mot de passe et dates d'arrivée et de départ.</li>
+    </ul>
+
+    <h3>Fonctionnalités</h3>
+    <ul>
+      <li>Gérer le compte root et le compte d'un employé (afficher, modifier nom, prénom, mail et mot de passe).</li>
+      <li>Afficher, ajouter, renommer et supprimer des ligues.</li>
+      <li>Ajouter, afficher, modifier et supprimer des employés d'une ligue.</li>
+      <li>Désigner l'administrateur d'une ligue (s'il est supprimé, le root reprend l'administration).</li>
+      <li>Contrôler la cohérence des dates d'arrivée et de départ d'un employé.</li>
+      <li>Quitter en enregistrant ou sans enregistrer.</li>
+    </ul>
+
+    <h3>Architecture</h3>
+    <div class="projet">
+      <h4>personnel</h4>
+      <p>Couche métier : GestionPersonnel, Ligue, Employe et les exceptions.</p>
+    </div>
+    <div class="projet">
+      <h4>commandLine</h4>
+      <p>Interface console : menus et saisies.</p>
+    </div>
+    <div class="projet">
+      <h4>serialisation et jdbc</h4>
+      <p>Deux façons de sauvegarder : dans un fichier sérialisé ou dans une base de données MySQL.</p>
+    </div>
+    <div class="projet">
+      <h4>testsUnitaires</h4>
+      <p>Tests JUnit sur les classes Ligue et Employe.</p>
+    </div>
+  </section>
+
+  <!-- Outils utilisés -->
+  <section id="outils">
+    <h2>Outils utilisés</h2>
+    <div class="projet">
+      <h3>Java 8</h3>
+      <p>Langage de l'application.</p>
+    </div>
+    <div class="projet">
+      <h3>Maven</h3>
+      <p>Gestion du projet et des dépendances (fichier pom.xml).</p>
+    </div>
+    <div class="projet">
+      <h3>Eclipse</h3>
+      <p>Environnement de développement.</p>
+    </div>
+    <div class="projet">
+      <h3>JUnit 5</h3>
+      <p>Tests unitaires.</p>
+    </div>
+    <div class="projet">
+      <h3>Bibliothèque CommandLineMenus 2.0</h3>
+      <p>Création des menus et des listes en console.</p>
+    </div>
+    <div class="projet">
+      <h3>MySQL et connecteur JDBC 8.0.16</h3>
+      <p>Base de données relationnelle et accès depuis Java.</p>
+    </div>
+    <div class="projet">
+      <h3>Sérialisation Java</h3>
+      <p>Sauvegarde des données dans un fichier.</p>
+    </div>
+    <div class="projet">
+      <h3>Looping</h3>
+      <p>Modélisation du MCD.</p>
+    </div>
+    <div class="projet">
+      <h3>Git et GitHub</h3>
+      <p>Versionnage du code et travail à deux.</p>
+    </div>
+  </section>
+
+  <!-- Ma contribution -->
+  <section id="contribution">
+    <h2>Ma contribution</h2>
+    <div class="projet">
+      <h3>Tests unitaires</h3>
+      <p>J'ai créé testEmploye.java et complété testLigue.java (novembre 2026). Ils vérifient les setters, les droits d'administration et la suppression d'un employé ou d'une ligue, avec des noms uniques pour que les tests ne se gênent pas, car GestionPersonnel est partagé.</p>
+    </div>
+    <div class="projet">
+      <h3>Script de base de données</h3>
+      <p>J'ai écrit PersonnelBDD.sql : création de la base gestion_ligues, des tables ROLE, LIGUE et EMPLOYE et des clés étrangères, dates d'arrivée et de départ comprises.</p>
+    </div>
+    <div class="projet">
+      <h3>Schéma des menus</h3>
+      <p>J'ai réalisé l'arbre des menus de la console sous forme d'image.</p>
+    </div>
+    <div class="projet">
+      <h3>Documentation</h3>
+      <p>J'ai créé le README.md du dépôt.</p>
+    </div>
+    <p>Mon binôme a de son côté réalisé le MCD final, ajouté les dates aux employés (classe DateIncoherente), la saisie des dates en console et la méthode de changement d'administrateur.</p>
+  </section>
+
+  <footer>
+    <p>Portfolio de Sacha Dumont - BTS SIO</p>
+  </footer>
+
+</body>
+</html>
